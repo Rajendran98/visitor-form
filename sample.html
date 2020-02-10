@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ 
+  <link rel="stylesheet" href="main.css" type="text/css" media="all">
+  
+  <style>
+
+
+  	.split1 {
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+  	.split2 {
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: lightblue;
+}
+
+.right {
+  right: 0;
+  background-color: lightblue;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=tel], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover {
+  background-color: slateblue;
+}
+
+
+  </style>
+</head>
+<body>
+
+ 
+<form action = "sample1.html">
+
+	<div class="split1 left">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<select id="visitertype" name="visitortype" required>
+							<option value=""disabled selected>Visiter Type *</option>  
+							<option value="australia">x1</option>
+							<option value="canada">x2</option>
+							<option value="usa">x3</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<select id="passtype" name="passtype" required>
+							<option value=""disabled selected>Pass Type *</option>   
+							<option value="australia">p1</option>
+							<option value="canada">p2</option>
+							<option value="usa">p3</option>
+						</select>
+					</div>
+
+					<div class="col-sm-4">
+						<select id="gender" name="gender" required>
+							<option value=""disabled selected>Gender *</option>   
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</div>    	
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="text" id="fname" name="firstname" placeholder="Your First Name *" required>
+					</div>
+					<div class="col-sm-6">
+						<input type="text" id="lname" name="lastname" placeholder="Your Second Name *" required>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-6">
+					<input type="tel" id="phone" name="phone" placeholder="Contact Number *" required>
+					</div>
+					<div class="col-sm-6">
+						<input placeholder="Date *" class="textbox-n" type="text" onfocus="(this.type='date')"  id="date"> 
+					</div>
+				</div>
+				<br>	  
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="text" id="place" name="place" placeholder="Visiting Place *" required>
+					</div>
+					<div class="col-sm-6">
+						<input type="text" id="vechicle" name="vechicle" placeholder="Vechicle No *" required>
+					</div>
+				</div>
+				<br>	
+				<div class="row">
+					<div class="col-sm-6">
+						<select id="id" name="id" required>
+							<option value=""disabled selected>Id *</option>   
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>						
+					</div>
+					<div class="col-sm-6">
+						<input type="text" id="idd" name="idd" placeholder="Id-details *" required>
+					</div>
+				</div>
+				<br>	
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="text" id="host" name="host" placeholder="Host Name *" required>
+					</div>
+					<div class="col-sm-6">
+						<input type="text" id="host" name="host" placeholder="Escort Name">
+					</div>
+				</div>
+				<br>	
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="text" id="organ" name="organ" placeholder="Organization *" required>
+					</div>
+					<div class="col-sm-6">
+						<input type="text" id="purpose" name="purpose" placeholder="Purpose *" required>
+					</div>
+				</div>
+				<br>	
+				<div class="row">
+					<div class="col-sm-12">
+						<input type="text" id="material" name="Material" placeholder="Material carried">
+					</div>
+
+				</div>																			 
+			</div>
+	</div>
+
+	<div class="split2 right">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="camera">
+						<video id="video">Video stream not available.</video>
+						<button id="startbutton">Take photo</button> 
+					  </div>
+					  <canvas id="canvas">
+					  </canvas>
+					  <div class="output">
+						<img id="photo" alt="The screen capture will appear in this box."> 
+					  </div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col">
+					<input placeholder="Vaild *" class="textbox-n" type="text" onfocus="(this.type='date')"  id="date"> 
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col">
+
+					<input type="time" id="time"name="time" placeholder="Time *">
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			
+
+			
+			
+			
+			
+			
+
+			<div class="row">
+				<div class="col">
+					<input type="submit" value="Submit">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>
+
+</body>
+</html>
